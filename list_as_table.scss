@@ -1,0 +1,192 @@
+/**
+ * List as table
+ * A Sass mixin for displaying definition lists as table
+ * for mobile-first happiness
+ *
+ * @version: 0.1
+ * @author Carles Jove i Buxeda
+ * http://carlus.cat
+ * License: What the fuck is a license?
+ */
+@mixin list-as-table(
+	$columns, 
+	$cell_padding: .5em, 
+	$head_bg: darken(nth($strip_colors, 2), 5%), 
+	$head_color: white,
+	$striped: true,
+	$strip_colors: (#fff, #f5f5f5),
+	$strip_rule: odd, 
+	$borders: false, 
+	$border_color: darken(nth($strip_colors, 2), 10%),
+	$nested_cells: () ) {
+
+	@include unlist();
+	@include clearfix;
+	position: relative;
+
+	// Don't let padding ruin your day
+	dt, dd {
+		-webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box; 
+	}
+
+	$cell_width: percentage( 1 / $columns );
+	
+	// Table heading
+	li {
+		float: none;
+		&:first-child {
+			dt {
+				position: absolute;
+				background: $head_bg;
+				color: $head_color;
+				width: $cell_width;
+				line-height: 1em !important;
+				padding: $cell-padding;
+				top: 0;
+
+				@for $i from 2 through $columns {
+					&:nth-of-type(#{$i}) {
+						left: ( $cell_width * ($i - 1) );
+					}
+				}
+			}
+			&:before {
+				content: ".";
+				display: block;
+				background: $head_bg;
+				width: 100%;
+				height: 1em + $cell-padding * 2;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+		}
+		&:not(:first-child) dt {
+			display: none;
+		}
+	}
+	
+	/* Table body */
+	li {
+		width: 100%;
+		@include clearfix;
+		dd {
+			float: left;
+			width: $cell_width;
+			padding: $cell_padding;
+		}
+
+		/* First row */
+		&:first-child {
+			dd {
+				margin-top: 1em + $cell_padding * 2;
+			}
+		}
+	}
+
+	// Borders
+	@if $borders == true {
+		border: 1px solid $border_color;
+		border-bottom: none;
+		li {			
+			border-bottom: 1px solid $border_color;
+			dt, dd {
+				border-left: 1px solid $border_color;
+				&:first-of-type {
+					border-left: none;
+				}
+			}
+		}
+	} @else {
+		li {
+			border-bottom: 1px solid $border_color;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	// Stripped table
+	@if $striped == true {
+		li {
+			background: get_row_color($strip_rule, $strip_colors);
+			&:nth-child(#{$strip_rule}) {
+				background: get_strip_color($strip_rule, $strip_colors);
+			}
+		}
+	}
+
+	// Definition title has many descriptions
+	@if length($nested_cells) > 0 {
+		li {
+			@each $has-number in $nested_cells {
+				dt.has-#{$has-number} {
+					$i: $has-number;
+					
+					@while $i > 0 {
+						$div: how-many-elements($i, dd);
+
+						& #{$div} {
+							width: $cell_width / $has-number;
+						}
+						
+						$i: $i - 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+// How Many
+@function how-many-elements($i, $element) {
+
+	$return: ();
+
+	@for $i from 1 through $i {
+		$return: append($return, + $element);
+	}
+
+	@return $return;
+}
+
+// Row color
+@function get_row_color($rule, $strip_colors) {
+	@if $rule == 'odd' {
+		@return nth($strip_colors, 2);
+	} @if $rule == 'even' {
+		@return nth($strip_colors, 1);
+	}
+}
+
+// Srip color
+@function get_strip_color($rule, $strip_colors) {
+	@if $rule == 'odd' {
+		@return nth($strip_colors, 1);
+	} @if $rule == 'even' {
+		@return nth($strip_colors, 2);
+	}
+}
+
+// Helper mixins
+// Clearfix
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: block;
+		height: 0;
+		visibility: hidden;
+		clear: both;
+	}
+}
+
+// Unlist
+@mixin unlist() {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+

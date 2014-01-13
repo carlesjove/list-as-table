@@ -1,0 +1,64 @@
+@import "../list_as_table";
+
+* {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5em;
+}
+
+.container {
+	padding: 1em 1em 5em;
+	background: white;
+}
+
+table {
+	width: 100%;
+	text-align: left;
+	thead {
+		background: gray;
+		color: white;
+	}
+	tbody {
+		tr:nth-child(even) {
+			background: #f5f5f5;
+		}
+	}
+	th, td {
+		padding: 1em;
+	}
+}
+
+.list-as-table {
+	/* Layout as definition list */
+	li {
+		width: 50%;
+		float: left;
+		background: white;
+
+		dt, dd {
+			margin: 0;
+			padding: 0;
+			float: left;
+		}
+
+		dt {
+			font-weight: bold;
+		}
+
+		dd + dt {
+			clear: left;
+		}
+	}
+	/* Layout as table */
+	@media only screen and (min-width: 900px) {
+		@include list-as-table(5, 
+			$cell_padding: 1em, 
+			$head_bg: gray, 
+			$striped: true,
+			$strip_colors: (#fff, #f5f5f5),
+			$strip_rule: odd, 
+			$borders: false, 
+			$border_color: darken(#f5f5f5, 10%),
+			$nested_cells: (2,3) );
+	}
+}
