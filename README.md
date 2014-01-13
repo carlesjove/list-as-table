@@ -60,3 +60,30 @@ ul {
 // See the example files for a full list of available options
 ```
 
+Options
+--------
+`$columns`: int. The number of columns (in other words, the number of `<dt>`tags)  
+
+`$cell_padding`: (optional) Cell padding, in `em` units 
+
+`$head_bg`: (optional) Background color for the table header 
+
+`$head_color`: (optional) Text color for the table header
+
+`$striped`: (optional) `bool`. Whether you want the table striped or not. Default is `true`
+
+`$strip_colors`: (optional) `list`. A two item list with the rows colors. Order is odd, even. Example: `(#fff, #f5f5f5) // White for odd and light gray for even`
+
+`$strip_rule`: (optional) Whether to strip odd or even rows. Values must be `odd` or `even` 
+
+`$borders`: (optional) `bool`. Whether the table should have borders or not. Default is `false` 
+
+`$border_color`: (optional) Border color
+
+`$nested_cells`: (optional) `list`. If a column has more than one children (that is, a `<dt>` tag has multiple `<dd>`) specify the cases in a list. Example: `(2,3) // One column has two nested cells, and another has 3`
+
+
+License
+--------
+Shout out loud my name when having sex with your partner. Or just have a toast on me.
+
