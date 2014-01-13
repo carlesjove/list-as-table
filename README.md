@@ -1,6 +1,6 @@
 List as table
 ==============
-A Sass mixin for displaying definition lists as table for mobile-first happiness.
+A Sass mixin for displaying definition lists as tables for mobile-first happiness.
 
 See a demo [here](http://carlus.cat/static/list-as-table/).
 
@@ -53,7 +53,7 @@ ul {
 
 	// Style list as table
 	@media only screen and (min-width: 960px) {
-		@include list-as-table(4); // You must tell the column number, which is de <dt> count
+		@include list-as-table(4); // You must specify the column number, which is de <dt> count
 	}
 }
 
