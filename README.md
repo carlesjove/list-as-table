@@ -2,7 +2,7 @@ List as table
 ==============
 A Sass mixin for displaying definition lists as table for mobile-first happiness.
 
-See a demo [here](#).
+See a demo [here](http://carlus.cat/static/list-as-table/).
 
 How To Use
 -----------
