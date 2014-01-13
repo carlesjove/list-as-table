@@ -33,7 +33,7 @@ table {
 	list-style-type: none;
 	li {
 		background: #f5f5f5;
-		padding: .5em;
+		padding: 1em;
 		margin: 0 0 .5em;
 		@include clearfix;
 
@@ -44,7 +44,6 @@ table {
 
 		dt {
 			font-weight: bold;
-			margin-right: .5em;
 			float: left;
 			clear: right;
 			width: 30%;
@@ -52,7 +51,7 @@ table {
 
 		dd {
 			float: right;
-			width: 65%;
+			width: 70%;
 			text-align: right;
 		}
 	}

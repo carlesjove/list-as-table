@@ -3,7 +3,7 @@
  * A Sass mixin for displaying definition lists as table
  * for mobile-first happiness
  *
- * @version: 0.1
+ * @version: 0.1.2
  * @author Carles Jove i Buxeda
  * http://carlus.cat
  * License: What the fuck is a license?
@@ -34,7 +34,7 @@ table {
   /* Layout as table */ }
   .list-as-table li {
     background: #f5f5f5;
-    padding: .5em;
+    padding: 1em;
     margin: 0 0 .5em; }
     .list-as-table li:after {
       content: '';
@@ -47,13 +47,12 @@ table {
       padding: 5px 0; }
     .list-as-table li dt {
       font-weight: bold;
-      margin-right: .5em;
       float: left;
       clear: right;
       width: 30%; }
     .list-as-table li dd {
       float: right;
-      width: 65%;
+      width: 70%;
       text-align: right; }
   @media only screen and (min-width: 900px) {
     .list-as-table {
