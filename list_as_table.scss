@@ -3,7 +3,7 @@
  * A Sass mixin for displaying definition lists as table
  * for mobile-first happiness
  *
- * @version: 0.1
+ * @version: 0.1.2
  * @author Carles Jove i Buxeda
  * http://carlus.cat
  * License: What the fuck is a license?
@@ -32,6 +32,16 @@
 	}
 
 	$cell_width: percentage( 1 / $columns );
+
+	// Possible conflicits
+	li {
+		margin: 0;
+		padding: 0;
+		dt, dd {
+			float: none;
+			padding: 0;
+		}
+	}
 	
 	// Table heading
 	li {
