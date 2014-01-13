@@ -1,0 +1,98 @@
+/**
+ * List as table
+ * A Sass mixin for displaying definition lists as table
+ * for mobile-first happiness
+ *
+ * @version: 0.1.2
+ * @author Carles Jove i Buxeda
+ * http://carlus.cat
+ * License: What the fuck is a license?
+ */
+.list-as-table {
+  /* Layout as table */ }
+  @media only screen and (min-width: 900px) {
+    .list-as-table {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      /* Table body */ }
+      .list-as-table:after {
+        content: '';
+        display: block;
+        height: 0;
+        visibility: hidden;
+        clear: both; }
+      .list-as-table dt, .list-as-table dd {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; }
+      .list-as-table li {
+        margin: 0;
+        padding: 0; }
+        .list-as-table li dt, .list-as-table li dd {
+          float: none;
+          padding: 0; }
+      .list-as-table li {
+        float: none; }
+        .list-as-table li:first-child dt {
+          position: absolute;
+          background: black;
+          color: white;
+          width: 20%;
+          line-height: 1em !important;
+          padding: 1em;
+          top: 0; }
+          .list-as-table li:first-child dt:nth-of-type(2) {
+            left: 20%; }
+          .list-as-table li:first-child dt:nth-of-type(3) {
+            left: 40%; }
+          .list-as-table li:first-child dt:nth-of-type(4) {
+            left: 60%; }
+          .list-as-table li:first-child dt:nth-of-type(5) {
+            left: 80%; }
+        .list-as-table li:first-child:before {
+          content: ".";
+          display: block;
+          background: black;
+          width: 100%;
+          height: 3em;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0; }
+        .list-as-table li:not(:first-child) dt {
+          display: none; }
+      .list-as-table li {
+        width: 100%;
+        /* First row */ }
+        .list-as-table li:after {
+          content: '';
+          display: block;
+          height: 0;
+          visibility: hidden;
+          clear: both; }
+        .list-as-table li dd {
+          float: left;
+          width: 20%;
+          padding: 1em; }
+        .list-as-table li:first-child dd {
+          margin-top: 3em; }
+      .list-as-table li {
+        border-bottom: 1px solid red; }
+        .list-as-table li:last-child {
+          border-bottom: none; }
+      .list-as-table li {
+        background: whitesmoke; }
+        .list-as-table li:nth-child(odd) {
+          background: white; }
+      .list-as-table li dt.has-2 + dd + dd {
+        width: 10%; }
+      .list-as-table li dt.has-2 + dd {
+        width: 10%; }
+      .list-as-table li dt.has-3 + dd + dd + dd {
+        width: 6.66667%; }
+      .list-as-table li dt.has-3 + dd + dd {
+        width: 6.66667%; }
+      .list-as-table li dt.has-3 + dd {
+        width: 6.66667%; } }
