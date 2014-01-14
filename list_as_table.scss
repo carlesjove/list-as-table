@@ -11,7 +11,7 @@
 @mixin list-as-table(
 	$columns, 
 	$cell_padding: .5em, 
-	$head_bg: darken(nth($strip_colors, 2), 5%), 
+	$head_bg: black, 
 	$head_color: white,
 	$striped: true,
 	$strip_colors: (#fff, #f5f5f5),
