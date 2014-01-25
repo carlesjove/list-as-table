@@ -82,6 +82,17 @@ Options
 
 `$nested_cells`: (optional) `list`. If a column has more than one children (that is, a `<dt>` tag has multiple `<dd>`) specify the cases in a list. Example: `(2,3) // One column has two nested cells, and another has 3`
 
+Changelog
+---------
+== 0.1.4 ==
+- Prevent unwanted goddam margins ruin the thing
+
+== 0.1.3 ==
+- Fixed undefined variable usage
+- dt margin issue
+
+== 0.1.2 ==
+- Prevent possible style conflicts
 
 License
 --------

@@ -3,7 +3,7 @@
  * A Sass mixin for displaying definition lists as table
  * for mobile-first happiness
  *
- * @version: 0.1.3
+ * @version: 0.1.4
  * @author Carles Jove i Buxeda
  * http://carlus.cat
  * License: What the fuck is a license?
@@ -23,6 +23,8 @@
 	@include unlist();
 	@include clearfix;
 	position: relative;
+
+	* { margin: 0; padding: 0; }
 
 	// Don't let padding ruin your day
 	dt, dd {

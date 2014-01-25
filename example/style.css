@@ -3,19 +3,14 @@
  * A Sass mixin for displaying definition lists as table
  * for mobile-first happiness
  *
- * @version: 0.1.2
+ * @version: 0.1.4
  * @author Carles Jove i Buxeda
  * http://carlus.cat
  * License: What the fuck is a license?
  */
-* {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5em; }
-
 .container {
   padding: 1em 1em 5em;
-  background: white; }
+  background: red; }
 
 table {
   width: 100%;
@@ -70,16 +65,17 @@ table {
         height: 0;
         visibility: hidden;
         clear: both; }
+      .list-as-table * {
+        margin: 0;
+        padding: 0; }
       .list-as-table dt, .list-as-table dd {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box; }
-      .list-as-table li {
-        margin: 0;
-        padding: 0; }
-        .list-as-table li dt, .list-as-table li dd {
-          float: none;
-          padding: 0; }
+      .list-as-table li dt, .list-as-table li dd {
+        float: none;
+        padding: 0;
+        margin: 0; }
       .list-as-table li {
         float: none; }
         .list-as-table li:first-child dt {
