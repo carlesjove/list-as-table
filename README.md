@@ -96,5 +96,4 @@ Changelog
 
 License
 --------
-Shout out loud my name when having sex with your partner. Or just have a toast on me.
-
+The one that says that you can do whatever you like with this.
