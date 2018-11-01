@@ -1,83 +1,83 @@
 @import "../list_as_table";
 
 .container {
-	padding: 1em 1em 5em;
-	background: red;
+  padding: 1em 1em 5em;
+  background: red;
 }
 
 table {
-	width: 100%;
-	text-align: left;
-	thead {
-		background: gray;
-		color: white;
-	}
-	tbody {
-		tr:nth-child(even) {
-			background: #f5f5f5;
-		}
-	}
-	th, td {
-		padding: 1em;
-	}
+  width: 100%;
+  text-align: left;
+  thead {
+    background: gray;
+    color: white;
+  }
+  tbody {
+    tr:nth-child(even) {
+      background: #f5f5f5;
+    }
+  }
+  th, td {
+    padding: 1em;
+  }
 }
 
 .list-as-table {
-	/* Layout as definition list */
-	list-style-type: none;
-	li {
-		background: #f5f5f5;
-		padding: 1em;
-		margin: 0 0 .5em;
-		@include clearfix;
+  /* Layout as definition list */
+  list-style-type: none;
+  li {
+    background: #f5f5f5;
+    padding: 1em;
+    margin: 0 0 .5em;
+    @include clearfix;
 
-		dt, dd {
-			border-bottom: 1px solid darken(#f5f5f5, 10%);
-			padding: 5px 0;
-		}
+    dt, dd {
+      border-bottom: 1px solid darken(#f5f5f5, 10%);
+      padding: 5px 0;
+    }
 
-		dt {
-			font-weight: bold;
-			float: left;
-			clear: right;
-			width: 30%;
-		}
+    dt {
+      font-weight: bold;
+      float: left;
+      clear: right;
+      width: 30%;
+    }
 
-		dd {
-			float: right;
-			width: 70%;
-			text-align: right;
-		}
-	}
+    dd {
+      float: right;
+      width: 70%;
+      text-align: right;
+    }
+  }
 
-	/* Layout as table */
-	@media only screen and (min-width: 900px) {
-		// Undo conflictive  mobile styles
-		li {
-			dt, dd {
-				border: none;
-				text-align: left;
-			}
-		}
+  /* Layout as table */
+  @media only screen and (min-width: 900px) {
+    // Undo conflictive  mobile styles
+    li {
+      dt, dd {
+        border: none;
+        text-align: left;
+      }
+    }
 
-		@include list-as-table(5, 
-			$cell_padding: 1em, 
-			$head_bg: gray, 
-			$striped: true,
-			$strip_colors: (#fff, #f5f5f5),
-			$strip_rule: odd, 
-			$borders: false, 
-			$border_color: darken(#f5f5f5, 10%),
-			$nested_cells: (2,3) );
-	}
+    @include list-as-table(5, 
+      $cell_padding: 1em, 
+      $head_bg: gray, 
+      $striped: true,
+      $strip_colors: (#fff, #f5f5f5),
+      $strip_rule: odd, 
+      $borders: false, 
+      $border_color: darken(#f5f5f5, 10%),
+      $nested_cells: (2,3) );
+  }
 }
 
 @mixin clearfix {
-	&:after {
-		content: '';
-		display: block;
-		height: 0;
-		visibility: hidden;
-		clear: both;
-	}
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
 }
